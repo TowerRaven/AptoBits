@@ -1,0 +1,57 @@
+body, html {
+  z-index: 1;
+}
+
+#thecarousel.carousel {
+  width: 300px;
+  height: 200px;
+  /* factor in controls + slides */
+  padding: 2em;
+}
+
+#thecarousel.carousel .slides {
+  height: 180px;
+  /* absolute position allows slides to slide down or right */
+  position: absolute;
+}
+
+#thecarousel.carousel .aptocarousel-controls {
+  margin-top: 180px;
+}
+
+#thecarousel.carousel .slide .content {
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
+}
+
+#thecarousel.carousel .slide {
+  position: absolute;
+  bottom: 0px;
+  right: -300px;
+  display: inline-block;
+  float: left;
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
+  visibility: visible;
+  transition: height .0s, visibility .0s;
+  z-index: 1;
+}
+
+#thecarousel.carousel.no-js .slide {
+  /* Backup style with no JS */
+}
+
+#thecarousel.carousel .slide.cloaked {
+  visibility: hidden;
+  width: 0%;
+  transition: height 1s, width 1s, visibility 1s;
+  z-index: 2;
+}
+
+#thecarousel.carousel .slide.approaching {
+  visibility: hidden;
+  transition: height 1s, width 1s, visibility 1s;
+  z-index: 3;
+}

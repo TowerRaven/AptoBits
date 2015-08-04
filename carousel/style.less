@@ -1,0 +1,62 @@
+@carouselheight: 200px; /* Used for the outside container */
+@carouselwidth: 300px;  /* Used for the outside and slides */
+@slideheight: 180px; /* Used for slides and for margin-top */
+
+body, html {
+  z-index: 1;
+}
+
+#thecarousel.carousel {
+  width: @carouselwidth;
+  height: @carouselheight;
+  /* factor in controls + slides */
+  padding: 2em;
+}
+
+#thecarousel.carousel .slides {
+  height: @slideheight;
+  /* absolute position allows slides to slide down or right */
+  position: absolute;
+}
+
+#thecarousel.carousel .aptocarousel-controls {
+  margin-top: @slideheight;
+}
+
+#thecarousel.carousel .slide .content {
+  width: @carouselwidth;  //important to keep content structure to avoid squishing
+  height: @slideheight;   //important to keep content structure to avoid squishing
+  overflow: hidden;
+}
+
+#thecarousel.carousel .slide {
+  position: absolute;
+  bottom: 0px;          // this determines which direction it "slides"
+  right: -@carouselwidth;
+  display: inline-block;
+  float: left;
+  width: @carouselwidth;  // so we can change its width / height for the animation
+  height: @slideheight;
+  overflow: hidden;
+  visibility: visible;
+  transition: height .0s, visibility .0s;
+  z-index: 1;
+}
+
+#thecarousel.carousel.no-js .slide {
+  /* Backup style with no JS */
+}
+
+// The animation states
+#thecarousel.carousel .slide.cloaked {
+  visibility: hidden;
+  width: 0%; // change to height for up/down, width for left/right
+  transition: height 1s, width 1s, visibility 1s;
+  z-index: 2;
+}
+
+#thecarousel.carousel .slide.approaching {
+  visibility: hidden;
+  transition: height 1s, width 1s, visibility 1s;
+  z-index: 3;
+}

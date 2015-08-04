@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Litterbox Carousel Testing</title>
+
+		<link rel="stylesheet" type="text/css" href="../../reset.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="aptocarousel.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#thecarousel').aptocarousel();
+		});
+		</script>
+	</head>
+	<body>
+		<h1>Carousel Litterbox</h1>
+		<p>Primarily powered with CSS, and a smidge of JavaScript</p>
+		<div id="thecarousel" class="carousel no-js">
+			<ul class="slides">
+				<li class="slide" style="background-color: #66F"><div class="content"><h2>Slide #1</h2></div></li>
+				<li class="slide" style="background-color: #6F6"><div class="content"><h2>Slide #2</h2></div></li>
+				<li class="slide" style="background-color: #F66"><div class="content"><h2>Slide #3</h2></div></li>
+			</ul>
+			<div class="aptocarousel-controls"><button class="previous">Previous</button><button class="next">Next</button></div>
+		</div>
+
+	</body>
+</html>
