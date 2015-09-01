@@ -1,0 +1,30 @@
+.colorselect {
+	width: 2.2em;
+	height: 2.2em;
+	float: left;
+}
+
+.colorselect input[type="radio"] {
+	display: none;
+}
+
+.colorselect label .color {
+	display: block;
+	height: 0px;
+	transition: height 0.5s;
+}
+
+.colorselect:hover label .color {
+	height: 2em;
+	transition: height margin-bottom 0.5s;
+	margin-bottom: 0.2em;
+}
+
+.colorselect:hover input[type="radio"]:checked + label .color {
+	border: 1px solid #000;
+}
+
+.colorselect input[type="radio"]:checked + label .color {
+	height: 2em;
+	transition: height 0.5s;
+}
